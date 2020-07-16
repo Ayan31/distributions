@@ -13,3 +13,6 @@
   "author": "",
   "license": "ISC"
 }
+"scripts": {
+    "test": "mocha ./test/* --exit"
+}
