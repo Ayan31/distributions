@@ -26,8 +26,10 @@ jobs:
         node-version: '12'  
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Install and Run JSON Server
       run: |
+        npm install -g json-server
+        cd json-server
         json-server --watch db.json . &
         curl  http://localhost:3000/posts/1
         echo Add other actions to build,
