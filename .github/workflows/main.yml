@@ -31,7 +31,9 @@ jobs:
         npm install -g json-server
         pwd
         cd  $GITHUB_WORKSPACE
-        json-server --watch db.json &
-        curl  http://localhost:3000/posts/1
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - run: npm install 
+    - run: npm run build --if-present
+    - run: npm test
+    env:
+      CI: true
+#
