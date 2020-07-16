@@ -29,8 +29,9 @@ jobs:
     - name: Install and Run JSON Server
       run: |
         npm install -g json-server
-        cd json-server
-        json-server --watch db.json . &
+        pwd
+        cd  $GITHUB_WORKSPACE/json-server
+        json-server --watch db.json &
         curl  http://localhost:3000/posts/1
         echo Add other actions to build,
         echo test, and deploy your project.
