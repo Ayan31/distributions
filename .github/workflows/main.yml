@@ -28,12 +28,8 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Install and Run JSON Server
       run: |
-        npm install -g json-server
-        pwd
         cd  $GITHUB_WORKSPACE
-    - run: npm install 
-    - run: npm run build --if-present
-    - run: npm test
+        npm install -g json-server
+        npm test
     env:
       CI: true
-#
